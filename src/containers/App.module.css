@@ -1,0 +1,9 @@
+
+
+.App {
+  max-width: 50%;
+  height: 90vh;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 3px;
+}

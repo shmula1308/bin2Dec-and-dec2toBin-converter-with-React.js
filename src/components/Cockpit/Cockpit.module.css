@@ -1,0 +1,20 @@
+.Cockpit {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+.title {
+  font-family: "Monofett", cursive;
+  font-size: 2.2rem;
+  color: #217a9f;
+  margin-bottom: 1.5em;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
