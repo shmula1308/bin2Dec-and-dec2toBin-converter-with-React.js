@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Cockpit from "../components/Cockpit/Cockpit";
 import classes from "./App.module.css";
+import Form from '../components/Form/Form'
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
       <div className={classes.App}>
         <header>
           <Cockpit />
+          <Form/>
         </header>
       </div>
     );
