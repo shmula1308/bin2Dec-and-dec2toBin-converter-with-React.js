@@ -1,0 +1,41 @@
+.form__buttons-container {
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8em 2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: cornsilk;
+  text-decoration: none;
+  font-weight: 300;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: #4eb5f1;
+  border: 0;
+  cursor: pointer;
+  margin: 2em 1em;
+}
+
+.btn:active {
+  transform: scale(0.967);
+}
+.btn:hover {
+  background-color: #4095c6;
+}
+
+.btn__icon {
+  font-size: 0.8rem;
+  margin-right: 4px;
+}
+
+.btn__primary {
+  background-color: rgb(248, 122, 37);
+}
+
+.btn__primary:hover {
+  background-color: rgb(218, 96, 15);
+}
