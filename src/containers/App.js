@@ -24,6 +24,8 @@ class App extends Component {
    }
 
    validateBinaryHandler = (str) => {
+    if(!str.length) return false;
+
     if(str.split("").some(num => num !== '0' && num !== '1')) {
       this.setState({alertWrongInput: true})
       return false;
@@ -34,12 +36,12 @@ class App extends Component {
   }
 
    convertHandler = () => {
-
      if(this.state.bin2Dec) {
       if(!this.validateBinaryHandler(this.state.userInput)) return;
       const digit = parseInt(this.state.userInput, 2);
       this.setState({conversionResult: digit})
      } else {
+       if(!this.state.userInput) return;
       const digit = Number(this.state.userInput).toString(2);
       this.setState({conversionResult: digit})
      }
