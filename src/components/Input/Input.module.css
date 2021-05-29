@@ -14,3 +14,17 @@
   font-weight: 700;
   letter-spacing: 1px;
 }
+
+.alert {
+  display: block;
+  color: #a52a50;
+  text-align: left;
+  transform: translateY(-5px);
+  transition: 0.2s ease-in;
+  opacity: 0;
+}
+
+.active {
+  transform: translateY(0);
+  opacity: 1;
+}

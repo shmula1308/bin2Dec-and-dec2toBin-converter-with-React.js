@@ -1,17 +1,20 @@
 import React from 'react';
-import classes from './Buttons.module.css'
+import classes from './Button.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const Button = (props) => {
 
-    
-    
+   const assignedClasses = [];
+   if(props.title !== 'Convert') {
+    assignedClasses.push(classes.btn)
+   } else {
+    assignedClasses.push(classes.btn, classes['btn__primary'])
+   }
     return (
-        
             <button 
                 type="button" 
-                className={[classes.btn, classes['btn__primary']].join(' ')}
+                className={assignedClasses.join(' ')}
                 id="convert"
                 onClick={props.click}
                 >
