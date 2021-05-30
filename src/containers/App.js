@@ -19,13 +19,12 @@ class App extends Component {
       alertWrongInput: false,
       reset: false
    }
+
    userInputHandler = (ev) => {
       this.setState({userInput: ev.target.value})
    }
 
    validateBinaryHandler = (str) => {
-    if(!str.length) return false;
-
     if(str.split("").some(num => num !== '0' && num !== '1')) {
       this.setState({alertWrongInput: true})
       return false;
@@ -37,7 +36,7 @@ class App extends Component {
 
    convertHandler = () => {
      if(this.state.bin2Dec) {
-      if(!this.validateBinaryHandler(this.state.userInput)) return;
+      if(!this.validateBinaryHandler(this.state.userInput) || !this.state.userInput.length ) return;
       const digit = parseInt(this.state.userInput, 2);
       this.setState({conversionResult: digit})
      } else {
@@ -49,9 +48,9 @@ class App extends Component {
 
 
    swapHandler = () => {
-      let converter = this.state.bin2Dec;
+      let direction = this.state.bin2Dec;
       this.setState
-       ({bin2Dec: !converter,
+       ({bin2Dec: !direction,
         conversionResult: '',
         userInput: '',
         alertWrongInput: false
@@ -79,20 +78,24 @@ class App extends Component {
    onChangeHandler = (ev) => {
      if(ev.target.id === 'from' && ev.target.value === 'decimal'){
        this.setState({fromDefaultValue:'decimal',toDefaultValue:'binary'})
-       this.swapHandler()
      }
      if(ev.target.id === 'from' && ev.target.value === 'binary'){
       this.setState({fromDefaultValue: 'binary',toDefaultValue:'decimal'})
-      this.swapHandler()
     }
     if(ev.target.id === 'to' && ev.target.value === 'binary'){
       this.setState({fromDefaultValue: 'decimal',toDefaultValue:'binary'})
-      this.swapHandler()
     }
     if(ev.target.id === 'to' && ev.target.value === 'decimal'){
       this.setState({fromDefaultValue: 'binary',toDefaultValue:'decimal'})
-      this.swapHandler()
     }
+
+    let direction = this.state.bin2Dec;
+      this.setState
+       ({bin2Dec: !direction,
+        conversionResult: '',
+        userInput: '',
+        alertWrongInput: false
+    })
    }
 
    
@@ -115,7 +118,7 @@ class App extends Component {
             change={this.onChangeHandler}
             id='from'
             label='From'
-            value={this.state.fromDefaultValue} 
+            value={this.state.fromDefaultValue} //doesnt have to be named value on component, but it has to be value or defaultValue on the element.
             />
             <Select 
             change={this.onChangeHandler}
@@ -128,7 +131,7 @@ class App extends Component {
             <Button icon={faSync} title='Convert' click={this.convertHandler} />
             <Button icon={faTimes} title='Reset'click={this.resetFormHandler}/>
             <Button icon={faRetweet} title='Swap' click={this.swapHandler}/>
-            <ResultBox change={this.state.bin2Dec} result={this.state.conversionResult}/>
+            <ResultBox direction={this.state.bin2Dec} result={this.state.conversionResult}/>
         </form>
         </main>
       </div>

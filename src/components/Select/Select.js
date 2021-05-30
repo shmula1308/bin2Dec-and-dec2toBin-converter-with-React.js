@@ -4,28 +4,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortDown } from '@fortawesome/free-solid-svg-icons'
 
 
-const Select = (props) => {
+const Select = ({label,change,value,id,binary,decimal}) => {
 
-    let binary = 'Binary';
-    let decimal = 'Decimal';
+    let bin = 'Binary';
+    let dec = 'Decimal';
         
     return (
             <div className={classes['form__select-container']}>
                 <FontAwesomeIcon icon={faSortDown} className={classes["form__select-icon"]}/>
-                    <label htmlFor="binToDec" className={classes["form__select-label"]}>{props.label}</label>
+                    <label htmlFor="binToDec" className={classes["form__select-label"]}>{label}</label>
                     <select 
                     className={classes.form__select} 
-                    onChange={props.change}
-                    value={props.value}
-                    id={props.id}>
+                    onChange={change}
+                    value={value}
+                    id={id}>
                         <option 
                         value="binary" 
-                        selected={props.binary}>
-                        {binary}
+                        selected={binary}>
+                        {bin}
                         </option>
                         <option value="decimal" 
-                        selected={props.decimal}>
-                        {decimal}
+                        selected={decimal}>
+                        {dec}
                         </option>
                     </select>
             </div>

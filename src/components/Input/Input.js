@@ -1,11 +1,11 @@
 import classes from './Input.module.css'
 
-const Input = (props) => {
+const Input = ({direction,change,value,alert}) => {
 
      let label = 'Enter binary number';
      let placeholder = 'Enter max 8 binary numbers...';
      
-     if(!props.direction) {
+     if(!direction) {
         label = 'Enter decimal number'
         placeholder = 'Enter max 8 decimal numbers...';
      } 
@@ -19,10 +19,10 @@ const Input = (props) => {
                 className={classes['form__input']}
                 maxLength="8"
                 placeholder={placeholder}
-                onChange={props.change}
-                value={props.value}
+                onChange={change}
+                value={value}
             />
-            <small className={props.alert ? [classes.alert,classes.active].join(" ") : classes.alert}>Please enter only binary numbers</small>
+            <small className={alert ? [classes.alert,classes.active].join(" ") : classes.alert}>Please enter only binary numbers</small>
         </div>
     )
 }
