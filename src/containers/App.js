@@ -11,7 +11,7 @@ import { faSync,faTimes,faRetweet  } from '@fortawesome/free-solid-svg-icons'
 class App extends Component {
    
    state = {
-      bin2Dec: true,
+      bin2Dec: false,
       fromDefaultValue: 'binary', //has to be lowercase. 
       toDefaultValue: 'decimal',
       userInput: '',
