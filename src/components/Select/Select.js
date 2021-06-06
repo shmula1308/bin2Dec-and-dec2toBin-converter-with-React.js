@@ -8,7 +8,7 @@ const Select = ({label,change,value,id,binary,decimal}) => {
 
     let bin = 'Binary';
     let dec = 'Decimal';
-        
+    
     return (
             <div className={classes['form__select-container']}>
                 <FontAwesomeIcon icon={faSortDown} className={classes["form__select-icon"]}/>

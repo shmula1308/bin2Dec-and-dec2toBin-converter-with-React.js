@@ -1,7 +1,7 @@
 import classes from './Input.module.css'
 
 const Input = ({direction,change,value,alert}) => {
-
+    
      let label = 'Enter binary number';
      let placeholder = 'Enter max 8 binary numbers...';
      

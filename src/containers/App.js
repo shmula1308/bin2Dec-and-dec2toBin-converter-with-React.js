@@ -9,6 +9,8 @@ import { faSync,faTimes,faRetweet  } from '@fortawesome/free-solid-svg-icons'
 
 
 class App extends Component {
+
+
    
    state = {
       bin2Dec: true,
@@ -100,7 +102,7 @@ class App extends Component {
 
    
   render() {
-
+   console.log('App.js', 'rendering......','lifecycle hook - creation')
     const CSS = {
       display:'flex',
       justifyContent:'space-between',
@@ -110,29 +112,29 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
-          <Header change={this.state.bin2Dec}/>
+        <Header change={this.state.bin2Dec}/>
         <main>
-        <form className="form">
-          <div style={CSS}>
-            <Select 
-            change={this.onChangeHandler}
-            id='from'
-            label='From'
-            value={this.state.fromDefaultValue} //doesnt have to be named value on component, but it has to be value or defaultValue on the element.
-            />
-            <Select 
-            change={this.onChangeHandler}
-            id='to'
-            label='To'
-            value={this.state.toDefaultValue} 
-            />
-          </div>
-            <Input direction={this.state.bin2Dec} change={this.userInputHandler} value={this.state.userInput} alert={this.state.alertWrongInput} />
-            <Button icon={faSync} title='Convert' click={this.convertHandler} />
-            <Button icon={faTimes} title='Reset'click={this.resetFormHandler}/>
-            <Button icon={faRetweet} title='Swap' click={this.swapHandler}/>
-            <ResultBox direction={this.state.bin2Dec} result={this.state.conversionResult}/>
-        </form>
+          <form className="form">
+            <div style={CSS}>
+              <Select 
+              change={this.onChangeHandler}
+              id='from'
+              label='From'
+              value={this.state.fromDefaultValue} //doesnt have to be named value on component, but it has to be value or defaultValue on the element.
+              />
+              <Select 
+              change={this.onChangeHandler}
+              id='to'
+              label='To'
+              value={this.state.toDefaultValue} 
+              />
+            </div>
+              <Input direction={this.state.bin2Dec} change={this.userInputHandler} value={this.state.userInput} alert={this.state.alertWrongInput} />
+              <Button icon={faSync} title='Convert' click={this.convertHandler} />
+              <Button icon={faTimes} title='Reset'click={this.resetFormHandler}/>
+              <Button icon={faRetweet} title='Swap' click={this.swapHandler}/>
+              <ResultBox direction={this.state.bin2Dec} result={this.state.conversionResult}/>
+          </form>
         </main>
       </div>
     );

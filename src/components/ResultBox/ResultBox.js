@@ -2,7 +2,6 @@ import React from 'react';
 import './ResultBox.css';
 
 const ResultBox = ({direction,result}) => {
-
     return (
         <div className="result">
             <label htmlFor="result" className="result__label"

@@ -3,7 +3,6 @@ import image from "../../assets/binarynumbers.png";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
-
   return (
     <header>
       <div className={classes.Cockpit}>
